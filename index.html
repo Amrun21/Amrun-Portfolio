@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amrun Paizun - Data Analyst</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <style>
+      :root {
+        --primary-color: #000000;
+        --secondary-color: #ffffff;
+        --accent-color: #89cff0; /* Baby Blue */
+        --light-accent: #bde3f6; /* Lighter Baby Blue for backgrounds */
+        --grid-gap: 2rem;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .profile-container {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .profile-picture {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--accent-color);
+        box-shadow: 0 4px 12px rgba(137, 207, 240, 0.3);
+      }
+
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--primary-color);
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      /* Typography */
+      h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 2rem 0 1rem;
+        text-transform: uppercase;
+        color: var(--accent-color);
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        margin: 0rem 0;
+      }
+
+      /* Grid Layout */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--grid-gap);
+      }
+
+      /* Header Section */
+      header {
+        margin: 4rem 0;
+        background: linear-gradient(
+          to right,
+          var(--light-accent) 0%,
+          transparent 100%
+        );
+        padding: 2rem;
+      }
+
+      .intro {
+        grid-column: span 8;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .contact {
+        grid-column: span 4;
+        text-align: right;
+      }
+
+      /* Main Sections */
+
+      .first_section {
+        margin: 0rem 0;
+        grid-column: 1 / -1;
+      }
+
+      .section {
+        margin: 4rem 0;
+        grid-column: 1 / -1;
+      }
+
+      /* Projects Grid */
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--grid-gap);
+      }
+
+      .project-card {
+        background: var(--light-accent);
+        padding: 2rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent-color);
+        box-shadow: 0 5px 15px rgba(137, 207, 240, 0.2);
+      }
+
+      /* Skills Section */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+
+      .skill-category {
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border-left: 3px solid var(--accent-color);
+      }
+
+      /* Navigation - Updated Styles */
+      nav {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 2rem;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+      }
+
+      nav li {
+        margin: 0;
+      }
+
+      nav a {
+        color: var(--primary-color);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: var(--accent-color);
+      }
+
+      /* Button Design */
+      .button {
+        display: inline-block; /* Make it behave like a block element */
+        padding: 10px 20px; /* Add padding for size */
+        background-color: #a3c1da; /* Baby blue color */
+        color: white; /* Text color */
+        text-decoration: none; /* Remove underline */
+        border-radius: 5px; /* Rounded corners */
+        font-size: 16px; /* Font size */
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+      }
+
+      .button:hover {
+        background-color: #8ba7c9; /* Darker shade on hover */
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .profile-container {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .profile-picture {
+          width: 150px;
+          height: 150px;
+        }
+      }
+
+        .intro,
+        .contact {
+          grid-column: 1 / -1;
+          text-align: left;
+        }
+
+        h1 {
+          font-size: 3rem;
+        }
+      }
+
+      /* Swiss Design Accents */
+      .accent-line {
+        height: 2px;
+        background: var(--accent-color);
+        margin: 2rem 0;
+      }
+
+      .blue-accent {
+        color: var(--accent-color);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+    </nav>
+
+    <header class="grid">
+      <div class="intro">
+        <img
+          src="Formal Photo.JPG"
+          alt="Profile Picture"
+          class="profile-picture"
+        />
+        <div>
+          <h1>
+            AMRUN PAIZUN<br /><span class="blue-accent">DATA ANALYST</span>
+          </h1>
+          <p>
+            <a href="mailto:amrunzafri@gmail.com" target="_blank"
+              ><img src="email.svg" alt="email icon"
+            /></a>
+            <a href="tel:+60196741534" target="_blank"
+              ><img src="call.svg" alt="call icon"
+            /></a>
+            <a
+              href="https://www.linkedin.com/in/amrun-zafri-paizun-854614186/"
+              target="_blank"
+              ><img src="linkedin.svg" alt="linkedin icon"
+            /></a>
+            <a href="https://github.com/Amrun21" target="_blank"
+              ><img src="github.svg" alt="github icon"
+            /></a>
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <div class="accent-line"></div>
+
+    <section id="about" class="first_section">
+      <h2>About</h2>
+      <div class="grid">
+        <div style="grid-column: span 12">
+          <h3>Hi, I’m Amrun Zafri Bin Paizun</h3>
+          <p>
+            Welcome to my portfolio! I specialize in using data analytics and
+            visualization to bring clarity to complex information and support
+            data-driven decisions. Proficient in Python, SQL, and data tools
+            like Power BI and Tableau, I am enthusiastic about exploring data's
+            potential to solve real-world challenges, especially in the
+            financial and business sectors. Take a look at my projects to see
+            how I turn data into meaningful insights.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>Housing Data Analysis</h3>
+          <p style="margin: 2rem 0">
+            Using SQL Server and functions to transform and standardize housing
+            market.
+          </p>
+          <a
+            href="https://github.com/Amrun21/Data-Cleaning"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button"
+          >
+            View Project
+          </a>
+        </div>
+        <div class="project-card">
+          <h3>Airbnb Price Analysis</h3>
+          <p style="margin: 2rem 0">
+            Using Excel for data extraction and Tableau for the visualizations.
+            The visualizations illustrated the average rental prices by zip code
+            and the correlation between the number of bedrooms and pricing.
+          </p>
+          <a
+            href="https://public.tableau.com/views/AirbnbProject_17294971554650/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button"
+          >
+            View Project
+          </a>
+        </div>
+        <div class="project-card">
+          <h3>Housing Market Analysis</h3>
+          <p style="margin: 2rem 0">
+            Automates the extraction of data from APIs and appends it to
+            existing datasets, improving efficiency in data management. It
+            utilizes Python and libraries like Pandas and Requests to fetch
+            real-time data, process it, and integrate it seamlessly into current
+            datasets. The automation reduces manual effort and minimizes errors
+            associated with data entry.
+          </p>
+          <a
+            href="https://github.com/Amrun21/Automate-API-Extraction"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button"
+          >
+            View Project
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Data Analysis</h3>
+          <p>Python (Pandas, NumPy, Matplotlib, Seaborn, Plotly)</p>
+        </div>
+        <div class="skill-category">
+          <h3>Database</h3>
+          <p>SQL Server, PostgreSQL, MongoDB</p>
+        </div>
+        <div class="skill-category">
+          <h3>Visualization</h3>
+          <p>Power BI, Tableau, Microsoft Excel</p>
+        </div>
+        <div class="skill-category">
+          <h3>Programming</h3>
+          <p>JavaScript, HTML, CSS</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll("nav a").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const section = document.querySelector(this.getAttribute("href"));
+          section.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+
+      // Add scroll-based animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.transform = "translateY(0)";
+          }
+        });
+      });
+
+      document.querySelectorAll("section").forEach((section) => {
+        section.style.opacity = 0;
+        section.style.transform = "translateY(20px)";
+        section.style.transition = "all 0.6s ease-out";
+        observer.observe(section);
+      });
+    </script>
+  </body>
+</html>
